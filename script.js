@@ -9,6 +9,9 @@ const hoursInput = document.getElementById("inputH");
 const minutesInput = document.getElementById("inputM");
 const secondsInput = document.getElementById("inputS");
 
+var audio = new Audio('./public/audio/alarm.mp3');
+audio.currentTime = 1;
+
 let timer;
 let lessHours;
 let lessMinutes;
@@ -28,6 +31,12 @@ function startTimer(){
             hoursInput.value = lessHours;
             minutesInput.value = lessMinutes;
             secondsInput.value = lessSeconds;
+        }else{
+            clearInterval(timer);
+            audio.play();
+            alert("Timer done");
+            audio.pause();
+            audio.currentTime = 1;
         }
     }, 1000);
 }
