@@ -39,6 +39,17 @@ function startTimer(){
     }, 1000);
 }
 
+function stopTimer(){
+    clearInterval(timer);
+}
+
+function resetTimer(){
+    hoursInput.value = "";
+    minutesInput.value = "";
+    secondsInput.value = "";
+    clearInterval(timer);
+}
+
 function startCounter(){
     if(counterMs.textContent == "0"){
         counter = setInterval(() => {
