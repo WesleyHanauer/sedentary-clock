@@ -6,26 +6,21 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Timer</title>
 </head>
-<body>
-    <section id="main">
-        <div id="timer">
-            <p id="timerTime"></p>
-            <form id="timerForm" onsubmit="return false">
-                <input type="number" placeholder="hours" id="inputH">
-                <input type="number" placeholder="minutes" id="inputM">
-                <input type="number" placeholder="seconds" id="inputS">
-                <button onclick="startTimer()" class="border">
-                    Start timer
-                </button>
-                <button onclick="stopTimer()" class="border">
-                    Stop timer
-                </button>
-                <button onclick="resetTimer()" class="border">
-                    Reset timer
-                </button>
-            </form>
-        </div>
-    </section>
+<body class="bg-slate-600 flex items-center justify-center h-screen">
+    <form id="timerForm" onsubmit="return false" class="flex flex-col items-center text-white space-y-2">
+        <input type="number" placeholder="hours" id="inputH" class="border border-slate-500 rounded-sm bg-slate-900">
+        <input type="number" placeholder="minutes" id="inputM" class="border border-slate-500 rounded-sm bg-slate-900">
+        <input type="number" placeholder="seconds" id="inputS" class="border border-slate-500 rounded-sm bg-slate-900">
+        <button onclick="startTimer()" class="rounded bg-slate-900 px-2"">
+            Start timer
+        </button>
+        <button onclick="stopTimer()" class="rounded bg-slate-900 px-2"">
+            Stop timer
+        </button>
+        <button onclick="resetTimer()" class="rounded bg-slate-900 px-2">
+            Reset timer
+        </button>
+    </form>
     <script src="./script.js"></script>
 </body>
 </html>
