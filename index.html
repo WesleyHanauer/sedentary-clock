@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+</head>
+<body>
+    <section>
+        <div id="timer">
+            <p id="timerTime"></p>
+            <form id="timerForm" onsubmit="return false">
+                    <input type="number" placeholder="hours" id="inputH">
+                    <input type="number" placeholder="minutes" id="inputM">
+                    <input type="number" placeholder="seconds" id="inputS">
+                <button onclick="startTimer()">
+                    Start timer
+                </button>
+                <button onclick="stopTimer()">
+                    Stop timer
+                </button>
+                <button onclick="resetTimer()">
+                    Reset timer
+                </button>
+                <p id="countDown"></p>
+            </form>
+        </div>
+
+        <div id="counter">
+            <div>
+                <p id="counterMs">0</p><p id="counterSeconds">0</p>
+            </div>
+            <button onclick="startCounter()">
+                Start counter
+            </button>
+            <button onclick="stopCounter()">
+                Stop counter
+            </button>
+            <button onclick="resetCounter()">
+                Reset counter
+            </button>
+            
+        </div>
+    </section>
+    
+    <script src="./script.js"></script>
+</body>
+</html>
