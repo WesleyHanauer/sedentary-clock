@@ -3,46 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Timer</title>
 </head>
 <body>
-    <section>
+    <section id="main">
         <div id="timer">
             <p id="timerTime"></p>
             <form id="timerForm" onsubmit="return false">
-                    <input type="number" placeholder="hours" id="inputH">
-                    <input type="number" placeholder="minutes" id="inputM">
-                    <input type="number" placeholder="seconds" id="inputS">
-                <button onclick="startTimer()">
+                <input type="number" placeholder="hours" id="inputH">
+                <input type="number" placeholder="minutes" id="inputM">
+                <input type="number" placeholder="seconds" id="inputS">
+                <button onclick="startTimer()" class="border">
                     Start timer
                 </button>
-                <button onclick="stopTimer()">
+                <button onclick="stopTimer()" class="border">
                     Stop timer
                 </button>
-                <button onclick="resetTimer()">
+                <button onclick="resetTimer()" class="border">
                     Reset timer
                 </button>
-                <p id="countDown"></p>
             </form>
         </div>
-
-        <div id="counter">
-            <div>
-                <p id="counterMs">0</p><p id="counterSeconds">0</p>
-            </div>
-            <button onclick="startCounter()">
-                Start counter
-            </button>
-            <button onclick="stopCounter()">
-                Stop counter
-            </button>
-            <button onclick="resetCounter()">
-                Reset counter
-            </button>
-            
-        </div>
     </section>
-    
     <script src="./script.js"></script>
 </body>
 </html>

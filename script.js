@@ -4,22 +4,15 @@ window.addEventListener('load', () => {
 
 const timerForm = document.getElementById("timerForm");
 const timerButton = document.getElementById("startTimer");
-const countDown = document.getElementById("countDown");
 
 const hoursInput = document.getElementById("inputH");
 const minutesInput = document.getElementById("inputM");
 const secondsInput = document.getElementById("inputS");
 
-let counterMs = document.getElementById("counterMs");
-let counterSeconds = document.getElementById("counterSeconds");
-let time = 0;
-let pausedTime = 0;
-let counter;
 let timer;
 let lessHours;
 let lessMinutes;
 let lessSeconds;
-let rest;
 
 function startTimer(){
     const hours = Number(document.getElementById("inputH").value);
@@ -48,38 +41,4 @@ function resetTimer(){
     minutesInput.value = "";
     secondsInput.value = "";
     clearInterval(timer);
-}
-
-function startCounter(){
-    if(counterMs.textContent == "0"){
-        counter = setInterval(() => {
-            time++;
-            counterMs.textContent = time;
-            if(time==1000){
-                counterSeconds.textContent += 1;
-                time = 0;
-            }
-        }, 1);
-    }
-    /***
-else{
-        time = pausedTime;
-        counter = setInterval(() => {
-            time++;
-            counterMs.textContent = time;
-        }, 1);
-    }
-     * */
-}
-
-function stopCounter(){
-    counterMs.textContent = time;
-    pausedTime = time;
-    clearInterval(counter);
-}
-
-function resetCounter(){
-    time = 0;
-    counterMs.textContent = time;
-    clearInterval(counter);
 }
