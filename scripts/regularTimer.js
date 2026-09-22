@@ -1,11 +1,3 @@
-window.addEventListener('load', () => {
-    document.getElementById("timerForm").reset();
-});
-
-function selectChange(){
-    location.reload();
-}
-
 const timerForm = document.getElementById("timerForm");
 
 const hoursInput = document.getElementById("inputH");
@@ -53,11 +45,4 @@ function resetTimer(){
     minutesInput.value = "";
     secondsInput.value = "";
     clearInterval(timer);
-}
-
-const timerType = document.getElementById("timerOption").value;
-if(timerType == "regularTimer"){
-    
-}else if(timerType == "exerciseTimer"){
-    timerForm.style.display = "none";
 }
