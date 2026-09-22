@@ -13,11 +13,13 @@
         <option value="exerciseTimer">Exercise timer</option>
     </select>
 
-    <form id="timerForm" onsubmit="return false" class="flex flex-col items-center text-white space-y-2">
-
-        <input type="number" placeholder="hours" id="inputH" class="border border-slate-500 rounded-sm bg-slate-900">
-        <input type="number" placeholder="minutes" id="inputM" class="border border-slate-500 rounded-sm bg-slate-900">
-        <input type="number" placeholder="seconds" id="inputS" class="border border-slate-500 rounded-sm bg-slate-900">
+    <form id="regularTimerForm" onsubmit="return false" class="flex flex-col items-center text-white space-y-2">
+        <p>Hours</p>
+        <input type="number" id="inputH" class="border border-slate-500 rounded-sm bg-slate-900">
+        <p>Minutes</p>
+        <input type="number" id="inputM" class="border border-slate-500 rounded-sm bg-slate-900">
+        <p>Seconds</p>
+        <input type="number" id="inputS" class="border border-slate-500 rounded-sm bg-slate-900">
         <button onclick="startTimer()" class="rounded bg-slate-900 px-2"">
             Start timer
         </button>

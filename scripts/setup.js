@@ -1,5 +1,6 @@
 window.addEventListener('load', () => {
-    document.getElementById("timerForm").reset();
+    document.getElementById("regularTimerForm").reset();
+    document.getElementById("exerciseTimerForm").reset();
 });
 
 function selectChange(){
@@ -9,7 +10,7 @@ function selectChange(){
 const timerType = document.getElementById("timerOption").value;
 
 if(timerType == "regularTimer"){
-    
+    exerciseTimerForm.style.display = "none";
 }else if(timerType == "exerciseTimer"){
-    timerForm.style.display = "none";
+    regularTimerForm.style.display = "none";
 }
