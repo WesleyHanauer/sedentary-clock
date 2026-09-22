@@ -2,8 +2,11 @@ window.addEventListener('load', () => {
     document.getElementById("timerForm").reset();
 });
 
+function selectChange(){
+    location.reload();
+}
+
 const timerForm = document.getElementById("timerForm");
-const timerButton = document.getElementById("startTimer");
 
 const hoursInput = document.getElementById("inputH");
 const minutesInput = document.getElementById("inputM");
@@ -50,4 +53,11 @@ function resetTimer(){
     minutesInput.value = "";
     secondsInput.value = "";
     clearInterval(timer);
+}
+
+const timerType = document.getElementById("timerOption").value;
+if(timerType == "regularTimer"){
+    
+}else if(timerType == "exerciseTimer"){
+    timerForm.style.display = "none";
 }
