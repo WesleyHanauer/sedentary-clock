@@ -15,18 +15,40 @@
 
     <form id="regularTimerForm" onsubmit="return false" class="flex flex-col items-center text-white space-y-2">
         <p>Hours</p>
-        <input type="number" id="inputH" class="border border-slate-500 rounded-sm bg-slate-900">
+        <input type="number" id="regularInputH" class="border border-slate-500 rounded-sm bg-slate-900">
         <p>Minutes</p>
-        <input type="number" id="inputM" class="border border-slate-500 rounded-sm bg-slate-900">
+        <input type="number" id="regularInputM" class="border border-slate-500 rounded-sm bg-slate-900">
         <p>Seconds</p>
-        <input type="number" id="inputS" class="border border-slate-500 rounded-sm bg-slate-900">
-        <button onclick="startTimer()" class="rounded bg-slate-900 px-2"">
+        <input type="number" id="regularInputS" class="border border-slate-500 rounded-sm bg-slate-900">
+        <button onclick="regularStartTimer()" class="rounded bg-slate-900 px-2"">
             Start timer
         </button>
-        <button onclick="stopTimer()" class="rounded bg-slate-900 px-2"">
+        <button onclick="regularStopTimer()" class="rounded bg-slate-900 px-2"">
             Stop timer
         </button>
-        <button onclick="resetTimer()" class="rounded bg-slate-900 px-2">
+        <button onclick="regularResetTimer()" class="rounded bg-slate-900 px-2">
+            Reset timer
+        </button>
+    </form>
+
+    <form id="exerciseTimerForm" onsubmit="return false" class="flex flex-col items-center text-white space-y-2">
+        <p>Exercising minutes</p>
+        <input type="number" id="exerciseInputExercisingM" class="border border-slate-500 rounded-sm bg-slate-900">
+        <p>Exercising seconds</p>
+        <input type="number" id="exerciseInputExercisingS" class="border border-slate-500 rounded-sm bg-slate-900">
+        <p>Separation minutes</p>
+        <input type="number" id="exerciseInputSeparationS" class="border border-slate-500 rounded-sm bg-slate-900">
+        <p>Separation seconds</p>
+        <input type="number" id="exerciseInputSeparationM" class="border border-slate-500 rounded-sm bg-slate-900">
+        <p>Loop?</p>
+        <input id="exerciseLoop" type="checkbox">
+        <button onclick="exerciseStartTimer()" class="rounded bg-slate-900 px-2"">
+            Start timer
+        </button>
+        <button onclick="exerciseStopTimer()" class="rounded bg-slate-900 px-2"">
+            Stop timer
+        </button>
+        <button onclick="exerciseResetTimer()" class="rounded bg-slate-900 px-2">
             Reset timer
         </button>
     </form>

@@ -1,8 +1,8 @@
-const timerForm = document.getElementById("timerForm");
+const timerForm = document.getElementById("regularTimerForm");
 
-const hoursInput = document.getElementById("inputH");
-const minutesInput = document.getElementById("inputM");
-const secondsInput = document.getElementById("inputS");
+const hoursInput = document.getElementById("regularInputH");
+const minutesInput = document.getElementById("regularInputM");
+const secondsInput = document.getElementById("regularInputS");
 
 var audio = new Audio('./public/audio/alarm.mp3');
 audio.currentTime = 1;
@@ -12,10 +12,10 @@ let lessHours;
 let lessMinutes;
 let lessSeconds;
 
-function startTimer(){
-    const hours = Number(document.getElementById("inputH").value);
-    const minutes = Number(document.getElementById("inputM").value);
-    const seconds = Number(document.getElementById("inputS").value);
+function regularStartTimer(){
+    const hours = Number(hoursInput.value);
+    const minutes = Number(minutesInput.value);
+    const seconds = Number(secondsInput.value);
     let totalSeconds = ((hours * 60) * 60) + (minutes * 60) + seconds;
     timer = setInterval(() => {
         if(totalSeconds>0){
@@ -36,11 +36,11 @@ function startTimer(){
     }, 1000);
 }
 
-function stopTimer(){
+function regularStopTimer(){
     clearInterval(timer);
 }
 
-function resetTimer(){
+function regularResetTimer(){
     hoursInput.value = "";
     minutesInput.value = "";
     secondsInput.value = "";

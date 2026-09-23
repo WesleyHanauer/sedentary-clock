@@ -1,6 +1,9 @@
+const regularTimerForm = document.getElementById("regularTimerForm");
+const exerciseTimerForm = document.getElementById("exerciseTimerForm");
+
 window.addEventListener('load', () => {
-    document.getElementById("regularTimerForm").reset();
-    document.getElementById("exerciseTimerForm").reset();
+    regularTimerForm.reset();
+    exerciseTimerForm.reset();
 });
 
 function selectChange(){
