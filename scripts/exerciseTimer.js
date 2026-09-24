@@ -10,15 +10,15 @@ let lessMinutesExercising;
 let lessSecondsExercising;
 let lessMinutesSeparation;
 let lessSecondsSeparation;
-let separation = true;
 
 function exerciseStartTimer(){
-    const exercisingMinutes = Number(exercisingTimeM.value);
-    const separationMinutes = Number(separationTimeM.value);
-    //let separationSeconds = separationMinutes * 60;
-    //let exercisingSeconds = exercisingMinutes * 60;
-    let separationSeconds = separationMinutes;
-    let exercisingSeconds = exercisingMinutes;
+    const separationMinutesInput = Number(separationTimeM.value);
+    const separationSecondsInput = Number(separationTimeS.value);
+    const exercisingMinutesInput = Number(exercisingTimeM.value);
+    const exercisingSecondsInput = Number(exercisingTimeS.value);
+
+    let separationSeconds = (separationMinutesInput * 60) + separationSecondsInput;
+    let exercisingSeconds = (exercisingMinutesInput * 60) + exercisingSecondsInput;
 
     separationTimer = setInterval(() => {
         if(separationSeconds>0){
@@ -38,8 +38,8 @@ function exerciseStartTimer(){
             exercisingTimeM.value = lessMinutesSeparation;
             exercisingTimeS.value = lessSecondsSeparation;
         }else if(separationSeconds == 0 && exercisingSeconds == 0 && loopCheck.checked){
-            separationSeconds = separationMinutes;
-            exercisingSeconds = exercisingMinutes;
+            separationSeconds = (separationMinutesInput * 60) + separationSecondsInput;
+            exercisingSeconds = (exercisingMinutesInput * 60) + exercisingSecondsInput;
         }
     }, 1000);
 }
