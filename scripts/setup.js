@@ -5,19 +5,19 @@ const info = document.getElementById("info");
 window.addEventListener('load', () => {
     regularTimerForm.reset();
     exerciseTimerForm.reset();
+    regularTimerForm.style.display = "none";
 });
 
-function selectChange() {
-    setTimeout(function() {
-        window.location.reload();
-    }, 100);
-}
+function selectChange(){
+    const timerType = document.getElementById("timerOption").value;
 
-const timerType = document.getElementById("timerOption").value;
-
-if(timerType == "regularTimer"){
-    exerciseTimerForm.style.display = "none";
-    info.style.display = "none";
-}else if(timerType == "exerciseTimer"){
-    regularTimerForm.style.display = "none";
+    if (timerType === "regularTimer") {
+        regularTimerForm.style.display = "flex";
+        exerciseTimerForm.style.display = "none";
+        info.style.display = "none";
+    } else if (timerType === "exerciseTimer") {
+        exerciseTimerForm.style.display = "flex";
+        regularTimerForm.style.display = "none";
+        info.style.display = "flex";
+    }
 }
