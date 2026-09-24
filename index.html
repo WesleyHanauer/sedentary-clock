@@ -8,52 +8,56 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Timer</title>
 </head>
-<body class="bg-slate-600 flex flex-col items-center justify-center h-screen">
+<body class="bg-[#0B120C] text-[#E2E8E4] flex flex-col items-center justify-center h-screen">
     <p id="info" class="text-white w-[40%] mb-4 text-justify">Roughly 43% of all adults worldwide are overweight,
         regardless of the reasons, staying seated for longer periods of times is extremely harmful for your overall
         health, this app aims to remind you to get up and move around for a bit</p>
 
-    <select name="timer-option" id="timerOption" onchange="selectChange()" class="flex flex-col items-center p-1 rounded mb-4 text-black">
+    <select name="timer-option" id="timerOption" onchange="selectChange()" class="flex flex-col items-center p-1 rounded mb-4 bg-[#2ECC71]">
         <option value="exerciseTimer">Exercise timer</option>
         <option value="regularTimer">Regular timer</option>
     </select>
 
-    <form id="regularTimerForm" onsubmit="return false" class="flex flex-col items-center text-white space-y-2">
+    <form id="regularTimerForm" onsubmit="return false" class="flex flex-col items-center space-y-2">
         <p>Hours</p>
-        <input type="number" id="regularInputH" class="border border-slate-500 rounded-sm bg-slate-900">
+        <input inputmode="numeric" pattern="[0-9]*" id="regularInputH" class="border border-[#233827] rounded-md bg-[#2ECC71] w-[10vw]">
         <p>Minutes</p>
-        <input type="number" id="regularInputM" class="border border-slate-500 rounded-sm bg-slate-900">
+        <input inputmode="numeric" pattern="[0-9]*" id="regularInputM" class="border border-[#233827] rounded-md bg-[#2ECC71] w-[10vw]">
         <p>Seconds</p>
-        <input type="number" id="regularInputS" class="border border-slate-500 rounded-sm bg-slate-900">
-        <button onclick="regularStartTimer()" class="rounded bg-slate-900 px-2"">
+        <input inputmode="numeric" pattern="[0-9]*" id="regularInputS" class="border border-[#233827] rounded-md bg-[#2ECC71] w-[10vw]">
+        <button onclick="regularStartTimer()" class="rounded border border-[#233827] bg-[#2ECC71] px-2">
             Start timer
         </button>
-        <button onclick="regularStopTimer()" class="rounded bg-slate-900 px-2"">
+        <button onclick="regularStopTimer()" class="rounded border border-[#233827] bg-[#2ECC71] px-2">
             Stop timer
         </button>
-        <button onclick="regularResetTimer()" class="rounded bg-slate-900 px-2">
+        <button onclick="regularResetTimer()" class="rounded border border-[#233827] bg-[#2ECC71] px-2">
             Reset timer
         </button>
     </form>
 
-    <form id="exerciseTimerForm" onsubmit="return false" class="flex flex-col items-center text-white space-y-2">
+    <form id="exerciseTimerForm" onsubmit="return false" class="flex flex-col items-center space-y-2">
         <p>Exercising minutes</p>
-        <input type="number" id="exerciseInputExercisingM" class="border border-slate-500 rounded-sm bg-slate-900">
+        <input inputmode="numeric" pattern="[0-9]*" id="exerciseInputExercisingM"
+        class="border border-[#233827] rounded-md bg-[#2ECC71] w-[10vw]">
         <p>Exercising seconds</p>
-        <input type="number" id="exerciseInputExercisingS" class="border border-slate-500 rounded-sm bg-slate-900">
+        <input inputmode="numeric" pattern="[0-9]*" id="exerciseInputExercisingS"
+        class="border border-[#233827] rounded-md bg-[#2ECC71] w-[10vw]">
         <p>Separation minutes</p>
-        <input type="number" id="exerciseInputSeparationM" class="border border-slate-500 rounded-sm bg-slate-900">
+        <input inputmode="numeric" pattern="[0-9]*" id="exerciseInputSeparationM"
+        class="border border-[#233827] rounded-md bg-[#2ECC71] w-[10vw]">
         <p>Separation seconds</p>
-        <input type="number" id="exerciseInputSeparationS" class="border border-slate-500 rounded-sm bg-slate-900">
+        <input inputmode="numeric" pattern="[0-9]*" id="exerciseInputSeparationS"
+        class="border border-[#233827] rounded-md bg-[#2ECC71] w-[10vw]">
         <p>Loop?</p>
         <input id="exerciseLoop" type="checkbox" checked>
-        <button onclick="exerciseStartTimer()" class="rounded bg-slate-900 px-2"">
+        <button onclick="exerciseStartTimer()" class="border border-[#233827] rounded bg-[#2ECC71] px-2">
             Start timer
         </button>
-        <button onclick="exerciseStopTimer()" class="rounded bg-slate-900 px-2"">
+        <button onclick="exerciseStopTimer()" class="border border-[#233827] rounded bg-[#2ECC71] px-2">
             Stop timer
         </button>
-        <button onclick="exerciseResetTimer()" class="rounded bg-slate-900 px-2">
+        <button onclick="exerciseResetTimer()" class="rounded border border-[#233827] bg-[#2ECC71] px-2">
             Reset timer
         </button>
     </form>
