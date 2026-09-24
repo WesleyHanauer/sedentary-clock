@@ -7,8 +7,10 @@ window.addEventListener('load', () => {
     exerciseTimerForm.reset();
 });
 
-function selectChange(){
-    location.reload();
+function selectChange() {
+    setTimeout(function() {
+        window.location.reload();
+    }, 100);
 }
 
 const timerType = document.getElementById("timerOption").value;
