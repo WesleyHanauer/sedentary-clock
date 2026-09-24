@@ -2,6 +2,8 @@ const regularTimerForm = document.getElementById("regularTimerForm");
 const exerciseTimerForm = document.getElementById("exerciseTimerForm");
 const info = document.getElementById("info");
 
+regularTimerForm.style.display = "none";
+
 window.addEventListener('load', () => {
     regularTimerForm.reset();
     exerciseTimerForm.reset();
