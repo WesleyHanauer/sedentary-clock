@@ -8,17 +8,21 @@ var audio = new Audio('./public/audio/alarm.mp3');
 audio.currentTime = 1;
 
 let exercisingTimer;
+
+// These variables will be used to control the time changes without changing the original input values that must be saved
 let lessMinutesExercising;
 let lessSecondsExercising;
 let lessMinutesSeparation;
 let lessSecondsSeparation;
 
 function exerciseStartTimer(){
+    // Grabs the numbers inside the inputs rather than the inputs themselves handled on lines 1 through 5
     const separationMinutesInput = Number(separationTimeM.value);
     const separationSecondsInput = Number(separationTimeS.value);
     const exercisingMinutesInput = Number(exercisingTimeM.value);
     const exercisingSecondsInput = Number(exercisingTimeS.value);
 
+    // Turns the input time into raw seconds so we can work with it
     let separationSeconds = (separationMinutesInput * 60) + separationSecondsInput;
     let exercisingSeconds = (exercisingMinutesInput * 60) + exercisingSecondsInput;
 
@@ -32,6 +36,7 @@ function exerciseStartTimer(){
             separationTimeM.value = lessMinutesSeparation;
             separationTimeS.value = lessSecondsSeparation;
         }else if(exercisingSeconds>0){
+            // This allows the alarm to only play once after the separation timer is done, otherwise it would play indefinitely
             if(separationSeconds == 0 && exercisingSeconds == ((exercisingMinutesInput * 60) + exercisingSecondsInput)){
                 audio.play();
                 alert("Timer done, time to exercise!");
@@ -53,7 +58,7 @@ function exerciseStartTimer(){
             audio.pause();
             audio.currentTime = 1;
         }else{
-            clearInterval(separationTimer);
+            clearInterval(exercisingTimer);
         }
     }, 1000);
 }
