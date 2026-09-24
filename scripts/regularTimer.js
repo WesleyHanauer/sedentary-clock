@@ -1,5 +1,3 @@
-const timerForm = document.getElementById("regularTimerForm");
-
 const hoursInput = document.getElementById("regularInputH");
 const minutesInput = document.getElementById("regularInputM");
 const secondsInput = document.getElementById("regularInputS");
