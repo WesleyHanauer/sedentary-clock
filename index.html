@@ -8,9 +8,13 @@
     <title>Timer</title>
 </head>
 <body class="bg-slate-600 flex flex-col items-center justify-center h-screen">
+    <p id="info" class="text-white w-[40%] mb-4 text-justify">Roughly 43% of all adults worldwide are overweight,
+        regardless of the reasons, staying seated for longer periods of times is extremely harmful for your overall
+        health, this app aims to remind you to get up and move around for a bit</p>
+
     <select name="timer-option" id="timerOption" onchange="selectChange()" class="flex flex-col items-center p-1 rounded mb-4 text-black">
-        <option value="regularTimer">Regular timer</option>
         <option value="exerciseTimer">Exercise timer</option>
+        <option value="regularTimer">Regular timer</option>
     </select>
 
     <form id="regularTimerForm" onsubmit="return false" class="flex flex-col items-center text-white space-y-2">
