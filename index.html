@@ -6,6 +6,7 @@
     <meta name="google-site-verification" content="mJ_GU1NHusA1bbYXe-iRJuEZCi1q7NJ99jr42fF0Yuc" />
     <link rel="icon" href="./public/images/logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles/main.css">
     <title>Sedentary Timer</title>
 </head>
 <body class="bg-[#0B120C] text-[#E2E8E4] flex flex-col items-center justify-center h-screen">
@@ -13,26 +14,14 @@
         regardless of the reasons, staying seated for longer periods of times is extremely harmful for your overall
         health, this app aims to remind you to get up and move around for a bit</p>
 
-    <input
-        type="radio"
-        id="exerciseTimer"
-        name="timerSelect"
-        value="exerciseTimer"
-        checked
-    />
-    <label>
-        <span>Exercise timer</span>
-    </label>
+    <div id="timerTypeSelector">
+        <label class="underline cursor-pointer hover:bg-sky-700 bg-sky-700" for="exerciseTimer" id="exerciseLabel">Exercise timer</label>
+        <input type="radio" id="exerciseTimer" name="timerSelect" value="exerciseTimer" checked />
+        
+        <label class="underline cursor-pointer hover:bg-sky-700" for="regularTimer" id="regularLabel">Regular timer</label>
+        <input type="radio" id="regularTimer" value="regularTimer" name="timerSelect" />
+    </div>
 
-    <input
-        type="radio"
-        id="regularTimer"
-        value="regularTimer"
-        name="timerSelect"
-    />
-    <label>
-        <span>Regular timer</span>
-    </label>
 
     <form id="regularTimerForm" onsubmit="return false" class="flex flex-col items-center space-y-2">
         <p>Hours</p>
