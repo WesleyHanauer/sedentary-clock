@@ -1,6 +1,8 @@
 const regularTimerForm = document.getElementById("regularTimerForm");
 const exerciseTimerForm = document.getElementById("exerciseTimerForm");
 const info = document.getElementById("info");
+const exerciseTimerRadio = document.getElementById("exerciseTimer");
+const regularTimerRadio = document.getElementById("regularTimer");
 
 regularTimerForm.style.display = "none";
 
@@ -10,14 +12,20 @@ window.addEventListener('load', () => {
     regularTimerForm.style.display = "none";
 });
 
-function selectChange(){
-    const timerType = document.getElementById("timerOption").value;
+const radioButtons = document.querySelectorAll("input[name=timerSelect]");
 
-    if (timerType === "regularTimer") {
+radioButtons.forEach(radioButton => {
+    radioButton.addEventListener("change", (event) => {
+        selectChange(event.target.value);
+    })
+});
+
+function selectChange(type){
+    if (type == "regularTimer") {
         regularTimerForm.style.display = "flex";
         exerciseTimerForm.style.display = "none";
         info.style.display = "none";
-    } else if (timerType === "exerciseTimer") {
+    } else if (type == "exerciseTimer") {
         exerciseTimerForm.style.display = "flex";
         regularTimerForm.style.display = "none";
         info.style.display = "flex";

@@ -6,17 +6,33 @@
     <meta name="google-site-verification" content="mJ_GU1NHusA1bbYXe-iRJuEZCi1q7NJ99jr42fF0Yuc" />
     <link rel="icon" href="./public/images/logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Timer</title>
+    <title>Sedentary Timer</title>
 </head>
 <body class="bg-[#0B120C] text-[#E2E8E4] flex flex-col items-center justify-center h-screen">
     <p id="info" class="text-white w-[40%] mb-4 text-justify">Roughly 43% of all adults worldwide are overweight,
         regardless of the reasons, staying seated for longer periods of times is extremely harmful for your overall
         health, this app aims to remind you to get up and move around for a bit</p>
 
-    <select name="timer-option" id="timerOption" onchange="selectChange()" class="flex flex-col items-center p-1 rounded mb-4 bg-[#2ECC71]">
-        <option value="exerciseTimer">Exercise timer</option>
-        <option value="regularTimer">Regular timer</option>
-    </select>
+    <input
+        type="radio"
+        id="exerciseTimer"
+        name="timerSelect"
+        value="exerciseTimer"
+        checked
+    />
+    <label>
+        <span>Exercise timer</span>
+    </label>
+
+    <input
+        type="radio"
+        id="regularTimer"
+        value="regularTimer"
+        name="timerSelect"
+    />
+    <label>
+        <span>Regular timer</span>
+    </label>
 
     <form id="regularTimerForm" onsubmit="return false" class="flex flex-col items-center space-y-2">
         <p>Hours</p>
@@ -61,7 +77,6 @@
             Reset timer
         </button>
     </form>
-
     <script src="./scripts/setup.js"></script>
     <script src="./scripts/regularTimer.js"></script>
     <script src="./scripts/exerciseTimer.js"></script>
